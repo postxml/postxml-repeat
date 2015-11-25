@@ -1,36 +1,39 @@
 {
-	"name": "postxml-repeat",
-	"version": "0.1.0",
-	"description": "PostXML plugin for repeating elemetns",
-	"main": "index.js",
-	"devDependencies": {
-		"chai": "^3.3.0",
-		"gulp": "^3.9.0",
-		"gulp-eslint": "^1.0.0",
-		"gulp-mocha": "^2.1.3",
-		"postxml": "^0.2.4"
-	},
-	"scripts": {
-		"test": "mocha",
-		"lint": "jshint . && jscs ."
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/postxml/postxml-repeat.git"
-	},
-	"keywords": [
-		"html",
-		"plugin",
-		"postxml",
-		"transform"
-	],
-	"author": {
-		"name": "alanev",
-		"email": "e@alanev.ru"
-	},
-	"license": "MIT",
-	"bugs": {
-		"url": "https://github.com/postxml/postxml-repeat/issues"
-	},
-	"homepage": "https://github.com/postxml/postxml-repeat#readme"
+  "name": "postxml-repeat",
+  "version": "0.1.0",
+  "description": "PostXML plugin for repeating elemetns",
+  "main": "index.js",
+  "devDependencies": {
+    "chai": "^3.3.0",
+    "gulp": "^3.9.0",
+    "gulp-eslint": "^1.0.0",
+    "gulp-mocha": "^2.1.3",
+    "postxml": "^0.2.4"
+  },
+  "scripts": {
+    "test": "mocha",
+    "lint": "jshint . && jscs ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/postxml/postxml-repeat.git"
+  },
+  "keywords": [
+    "html",
+    "plugin",
+    "postxml",
+    "transform"
+  ],
+  "author": {
+    "name": "alanev",
+    "email": "e@alanev.ru"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/postxml/postxml-repeat/issues"
+  },
+  "homepage": "https://github.com/postxml/postxml-repeat#readme",
+  "dependencies": {
+    "lodash": "^3.10.1"
+  }
 }

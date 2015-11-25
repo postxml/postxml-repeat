@@ -1,3 +1,5 @@
+var _ = require('lodash');
+
 module.exports = function (options) {
 	
 	options = options || {};
@@ -5,21 +7,28 @@ module.exports = function (options) {
 	options.attr = options.attr || 'repeat';
 	
 	return function ($) {
-		
-		$.prototype.repeat = function () {
-			var numb = parseInt($(this).attr(options.attr)),
-				element = '';
-			
-			$(this).removeAttr(options.attr);
-			
-			for (var i = 0; i < numb; i++){
-				element += $.html(this);
-			}
-			$(this).replaceWith(element);
-		};
-		
 		while ($(options.selector).length != 0) {
-			$(options.selector).repeat();
+			$(options.selector).each(function () {
+				var data = JSON.parse($(this).attr(options.attr)),
+					repeated = '';
+				
+				$(this).removeAttr(options.attr);
+				var html = $.html(this);
+				
+				if (typeof data === 'number') {
+					for (var i = 0; i < data; i++){
+						repeated += $.html(this);
+					}
+				} else if (typeof data === 'object') {
+					_.each(data, function (element, key) {
+						repeated += html
+										.replace('{{value}}', element)
+										.replace('{{key}}', key);;
+					});
+				}
+				
+				$(this).replaceWith(repeated);
+			});
 		}
 	}
 };
