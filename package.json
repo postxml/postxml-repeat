@@ -1,6 +1,6 @@
 {
   "name": "postxml-repeat",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "PostXML plugin for repeating elemetns",
   "main": "index.js",
   "devDependencies": {
