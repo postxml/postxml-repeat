@@ -1,4 +1,4 @@
-var _ = require('lodash');
+'use strict';
 
 module.exports = function (options) {
 	
@@ -9,22 +9,19 @@ module.exports = function (options) {
 	return function ($) {
 		while ($(options.selector).length != 0) {
 			$(options.selector).each(function () {
-				var data = JSON.parse($(this).attr(options.attr)),
+				let data = JSON.parse($(this).attr(options.attr)),
 					repeated = '';
 				
 				$(this).removeAttr(options.attr);
-				var html = $.html(this);
+				let html = $.html(this);
 				
 				if (typeof data === 'number') {
-					for (var i = 0; i < data; i++){
-						repeated += $.html(this);
-					}
+                    repeated += html.repeat(data);
 				} else if (typeof data === 'object') {
-					_.each(data, function (element, key) {
-						repeated += html
-										.replace('{{value}}', element)
-										.replace('{{key}}', key);;
-					});
+                    for (let key in data) {
+                        let value = data[key];
+                        repeated += eval(`\`${html}\``);
+                    }
 				}
 				
 				$(this).replaceWith(repeated);

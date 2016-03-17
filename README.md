@@ -9,7 +9,7 @@
 ## Usage
 [Postxml]
 
-## Example
+## Example 1
 
 ### Input
 ```html
@@ -24,6 +24,25 @@
 	<div class="component__element">Hi!</div>
 	<div class="component__element">Hi!</div>
 	<div class="component__element">Hi!</div>
+</div>
+```
+
+## Example 2 (Array)
+You can use template string syntax when repeat array (value, key).
+
+### Input
+```html
+<div class="component">
+	<div class="component__element" repeat="['A', 'B', 'C']">${value}</div>
+</div>
+```
+
+### Output
+```html
+<div class="component">
+	<div class="component__element">A</div>
+	<div class="component__element">B</div>
+	<div class="component__element">C</div>
 </div>
 ```
 

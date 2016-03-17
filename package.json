@@ -33,7 +33,5 @@
     "url": "https://github.com/postxml/postxml-repeat/issues"
   },
   "homepage": "https://github.com/postxml/postxml-repeat#readme",
-  "dependencies": {
-    "lodash": "^3.10.1"
-  }
+  "dependencies": {}
 }
